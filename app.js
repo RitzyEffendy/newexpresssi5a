@@ -7,6 +7,10 @@ var expressLayout = require('express-ejs-layouts'); // Impor express
 const connectDB = require("./app_api/models/db")
 connectDB(); // Connect to MongoDB
 
+// Route app_api
+const fakultasRouterAPI = require("./app_api/routes/fakultas")
+
+// Route app_server
 var indexRouter = require('./app_server/routes/index');
 var usersRouter = require('./app_server/routes/users');
 
@@ -25,6 +29,7 @@ app.use(expressLayout);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/api/fakultas', fakultasRouterAPI);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
