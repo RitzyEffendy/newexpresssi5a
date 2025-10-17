@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-// Impor fakultasController
+// Impor beritaController
 const beritaController = require("../controllers/beritaController")
 
-// Route GET fakultas
+// Route GET berita
 router.get("/", beritaController.getAllBerita)
 
 // Export module
