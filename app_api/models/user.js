@@ -2,7 +2,7 @@ const mongoose = require("mongoose"); // Impor mongoose
 const bcrypt = require("bcryptjs");
 
 // Skema untuk collection user
-const userSchema = new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true, // Wajib diisi
@@ -28,7 +28,7 @@ const userSchema = new mongoose.Schema({
 });
 
 // Fungsi untuk enkripsi password sebelum menyimpan pengguna
-userSchema.pre("save", async function (next) {
+UserSchema.pre("save", async function (next) {
     if (!this.isModified("password")){
         // Jika password tidak diubah, lanjut tanpa enkripsi
         return next();
@@ -38,4 +38,4 @@ userSchema.pre("save", async function (next) {
     next();
 });
 
-module.exports = mongoose.model("user", userSchema);
+module.exports = mongoose.model("User", UserSchema);
