@@ -14,6 +14,8 @@ const beritaRouterAPI = require("./app_api/routes/berita")
 const prodiRouterAPI = require("./app_api/routes/prodi")
 const mahasiswaRouterAPI = require("./app_api/routes/mahasiswa")
 const authRouterAPI = require("./app_api/routes/auth")
+const resepRouterAPI = require("./app_api/routes/resep")
+const kategoriRouterAPI = require("./app_api/routes/kategori")
 
 require("dotenv").config();
 
@@ -42,6 +44,8 @@ app.use('/api/berita', beritaRouterAPI);
 app.use('/api/prodi', prodiRouterAPI);
 app.use('/api/mahasiswa', mahasiswaRouterAPI);
 app.use('/api/auth', authRouterAPI);
+app.use('/api/resep', resepRouterAPI);
+app.use('/api/kategori', kategoriRouterAPI);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
