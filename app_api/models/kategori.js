@@ -10,10 +10,6 @@ const kategoriSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true
-    },
-    resep_id: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'resep'
     }
 });
 
