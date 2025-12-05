@@ -2,7 +2,7 @@ const resepSchema = require('../models/resep');
 
 const getAllResep = async (req, res) => {
     try {
-        const result = await resepSchema.find().populate('kategori_id', 'kategoriResep deskripsi');
+        const result = await resepSchema.find();
         res.status(200).json(result);
     } catch (error) {
         res.status(500).json({ message: error.message });
