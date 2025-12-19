@@ -7,7 +7,7 @@ const resepController = require('../controllers/resepController');
 router.get('/', resepController.getAllResep);
 router.get('/:id', resepController.getAllResepById);
 router.delete('/:id', resepController.deleteAllResepById);
-router.put('/:id', resepController.updateResepById);
+router.patch('/:id', resepController.updateResepById);
 router.post('/', resepController.createResep);
 
 module.exports = router;
